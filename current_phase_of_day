@@ -1,0 +1,30 @@
+import datetime
+
+def get_current_time():
+    # Get the current time
+    now = datetime.datetime.now()
+    
+    # Format the time as hh:mm
+    current_time = now.strftime("%I:%M %p")
+    
+    return current_time
+
+# Example usage
+time_now = get_current_time()
+
+
+def get_time_of_day():
+    current_time = datetime.datetime.now().time()
+
+    if current_time < datetime.time(12, 0):
+        return "Morning"
+    elif current_time < datetime.time(17, 0):
+        return "Afternoon"
+    else:
+        return "Evening"
+
+# Example usage
+time_of_day = get_time_of_day()
+
+print(f"Good {time_of_day}!")
+print(f"The current time is: {time_now}.")
